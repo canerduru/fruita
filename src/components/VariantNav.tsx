@@ -11,6 +11,7 @@ export function VariantNav() {
     { path: '/', label: '🌿 Varyant A (Nordic)', shortLabel: 'A: Nordic' },
     { path: '/bold', label: '⚡ Varyant B (Bold)', shortLabel: 'B: Bold' },
     { path: '/pure', label: '🍏 Varyant C (Pure / Apple)', shortLabel: 'C: Pure' },
+    { path: '/kinetic', label: '✨ Varyant D (Kinetic / Scroll)', shortLabel: 'D: Kinetic' },
     { path: '/showcase', label: '📋 Karşılaştır', shortLabel: 'Showcase' },
   ];
 

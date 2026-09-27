@@ -35,6 +35,17 @@ const VARIANTS = [
     badge: 'Apple & Spells',
     badgeColor: '#3D6647',
   },
+  {
+    id: 'variant-d',
+    path: '/kinetic',
+    label: 'Variant D',
+    style: 'Kinetic & Scrollytelling',
+    description: 'Anime.js staggered choreography, scroll-driven -40°C sublimation narrative, and Crunch Lab.',
+    palette: ['#0C0F12', '#E8344A', '#EAB308', '#06D6A0'],
+    emoji: '⚡',
+    badge: 'Anime.js + Scroll',
+    badgeColor: '#E8344A',
+  },
 ];
 
 export default function Showcase() {
@@ -66,7 +77,7 @@ export default function Showcase() {
           margin: '0 0 12px', letterSpacing: -1
         }}>Fruita — Design Variants</h1>
         <p style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 600, fontSize: 16, margin: 0 }}>
-          Compare all three designs and choose the direction for your brand
+          Compare all four designs and choose the direction for your brand
         </p>
       </div>
 

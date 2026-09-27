@@ -4,6 +4,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import App from './App.tsx';
 import VariantB from './variants/VariantB.tsx';
 import VariantC from './variants/VariantC.tsx';
+import VariantD from './variants/VariantD.tsx';
 import Showcase from './pages/Showcase.tsx';
 import { VariantNav } from './components/VariantNav.tsx';
 import './index.css';
@@ -17,6 +18,8 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/bold" element={<VariantB />} />
         <Route path="/pure" element={<VariantC />} />
         <Route path="/c" element={<VariantC />} />
+        <Route path="/kinetic" element={<VariantD />} />
+        <Route path="/d" element={<VariantD />} />
         <Route path="/" element={<App />} />
         <Route path="*" element={<App />} />
       </Routes>
