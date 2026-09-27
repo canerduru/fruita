@@ -1,5 +1,7 @@
 import { Product } from '../types';
 
+const base = import.meta.env.BASE_URL;
+
 export const PRODUCTS: Product[] = [
   {
     id: 'fruita-jordgubbe',
@@ -83,7 +85,7 @@ export const PRODUCTS: Product[] = [
       waveHex: '#FA92A4',
       textHex: '#931B2A',
     },
-    image: '/images/products/jordgubbe.jpg',
+    image: `${base}images/products/jordgubbe.jpg`,
     crunchProfile: {
       sv: 'Lätt, frasig och smälter snabbt i munnen till rik jordgubbssmak.',
       en: 'Light, crunchy and melts rapidly into an explosion of strawberry flavor.',
@@ -177,7 +179,7 @@ export const PRODUCTS: Product[] = [
       waveHex: '#FFDE59',
       textHex: '#17472A',
     },
-    image: '/images/products/banan.jpg',
+    image: `${base}images/products/banan.jpg`,
     crunchProfile: {
       sv: 'Krispiga mynt med mild, fyllig och len banansötma.',
       en: 'Crispy banana discs with natural caramel-like sweetness.',
@@ -270,7 +272,7 @@ export const PRODUCTS: Product[] = [
       waveHex: '#ACDB6D',
       textHex: '#A61A22',
     },
-    image: '/images/products/apple.png',
+    image: `${base}images/products/apple.png`,
     crunchProfile: {
       sv: 'Superkrispig textur med frisk äppelton och naturlig krisp.',
       en: 'Super-crisp texture with fresh tart-sweet apple notes.',
@@ -364,7 +366,7 @@ export const PRODUCTS: Product[] = [
       waveHex: '#F87EA2',
       textHex: '#9C1138',
     },
-    image: '/images/products/hallon.jpg',
+    image: `${base}images/products/hallon.jpg`,
     crunchProfile: {
       sv: 'Luftig krispighet med en ljuvlig syrlig kick som piggar upp.',
       en: 'Airy crunch followed by an uplifting tangy berry spark.',
@@ -457,7 +459,7 @@ export const PRODUCTS: Product[] = [
       waveHex: '#C494E5',
       textHex: '#43195E',
     },
-    image: '/images/products/bjornbar.jpg',
+    image: `${base}images/products/bjornbar.jpg`,
     crunchProfile: {
       sv: 'Djup bärighet med krispigt knaster och frisk syrlighet.',
       en: 'Deep forest fruitiness with satisfying crunch.',

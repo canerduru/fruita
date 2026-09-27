@@ -100,12 +100,13 @@ export const PouchVisual: React.FC<PouchVisualProps> = ({
 
   const config = configs[fruitKey] || configs.jordgubbe;
 
+  const base = import.meta.env.BASE_URL;
   const realImages: Record<string, string> = {
-    jordgubbe: '/images/products/jordgubbe.png',
-    banan: '/images/products/banan.png',
-    apple: '/images/products/apple.png',
-    hallon: '/images/products/hallon.png',
-    bjornbar: '/images/products/bjornbar.jpg',
+    jordgubbe: `${base}images/products/jordgubbe.png`,
+    banan: `${base}images/products/banan.png`,
+    apple: `${base}images/products/apple.png`,
+    hallon: `${base}images/products/hallon.png`,
+    bjornbar: `${base}images/products/bjornbar.jpg`,
   };
 
   const realImageSrc = realImages[fruitKey];
