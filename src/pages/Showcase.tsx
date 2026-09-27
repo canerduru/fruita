@@ -25,6 +25,17 @@ const VARIANTS = [
     badgeColor: '#E8344A',
   },
   {
+    id: 'variant-b2',
+    path: '/bold2',
+    label: 'Variant B2',
+    style: 'Bold Mascot Edition (Gerçek Ambalaj)',
+    description: 'Farsking tarzı yüksek enerji — arka planı temizlenmiş 6 gerçek ambalaj, interaktif podyum ve İsveççe kurgu.',
+    palette: ['#E8344A', '#F5B731', '#F07E1A', '#6A3CB5'],
+    emoji: '🦊',
+    badge: 'Gerçek Ambalajlar',
+    badgeColor: '#F07E1A',
+  },
+  {
     id: 'variant-c',
     path: '/pure',
     label: 'Variant C',

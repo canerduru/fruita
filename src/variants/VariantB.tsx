@@ -388,14 +388,18 @@ export default function VariantB() {
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 flexDirection: 'column'
               }}>
-                {/* Giant fruit emoji as product visual */}
-                <div style={{ fontSize: 120, lineHeight: 1, filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.3))' }}>
-                  {emojis[0]}
+                {/* Real pouch product visual */}
+                <div style={{ height: 180, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <img
+                    src={heroProduct.image}
+                    alt={heroProduct.name.en}
+                    style={{ height: '100%', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 15px 25px rgba(0,0,0,0.4))' }}
+                  />
                 </div>
                 <div style={{
                   background: '#fff', color: colors.bg, fontFamily: "'Fredoka One', sans-serif",
                   fontWeight: 900, fontSize: 15, padding: '6px 18px', borderRadius: 50,
-                  marginTop: 12, border: '2px solid rgba(0,0,0,0.1)',
+                  marginTop: 8, border: '2px solid rgba(0,0,0,0.1)',
                   boxShadow: '3px 3px 0 rgba(0,0,0,0.1)'
                 }}>{heroProduct.price} kr · 15g</div>
               </div>
@@ -485,7 +489,13 @@ export default function VariantB() {
                           border: '2px solid #111'
                         }}>SALE</div>
                       )}
-                      <div style={{ fontSize: 80, lineHeight: 1 }}>{pe[0]}</div>
+                      <div style={{ height: 130, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <img
+                          src={product.image}
+                          alt={product.name.en}
+                          style={{ height: '100%', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.3))' }}
+                        />
+                      </div>
                     </div>
 
                     <div style={{ padding: 20 }}>
@@ -657,7 +667,13 @@ export default function VariantB() {
                 border: '3px solid rgba(0,0,0,0.2)', boxShadow: '6px 6px 0 rgba(0,0,0,0.2)'
               }}>
                 <div style={{ background: pc.bg, padding: '28px 20px', textAlign: 'center', position: 'relative' }}>
-                  <div style={{ fontSize: 72, lineHeight: 1, marginBottom: 12 }}>{pe[0]}</div>
+                  <div style={{ height: 120, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
+                    <img
+                      src={product.image}
+                      alt={product.name.en}
+                      style={{ height: '100%', width: 'auto', objectFit: 'contain', filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.3))' }}
+                    />
+                  </div>
                   <h3 style={{
                     fontFamily: "var(--font-display)",
                     color: '#fff', fontSize: 24, letterSpacing: '0.03em',
