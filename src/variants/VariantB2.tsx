@@ -241,10 +241,11 @@ export default function VariantB2() {
           </div>
 
           {/* Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-wider text-[#111]">
+          <nav className="hidden md:flex items-center gap-7 text-xs font-bold uppercase tracking-wider text-[#111]">
             <a href="#smaker" className="hover:text-[#E8344A] transition-colors">Smaker & Djur</a>
-            <a href="#fordelar" className="hover:text-[#E8344A] transition-colors">Varför Frystorkat?</a>
+            <a href="#ingredienser" className="hover:text-[#E8344A] transition-colors">1 Ingrediens</a>
             <a href="#jamforelse" className="hover:text-[#E8344A] transition-colors">Fruita vs Godis</a>
+            <a href="#recensioner" className="hover:text-[#E8344A] transition-colors">Recensioner</a>
             <a href="#skolbox" className="hover:text-[#E8344A] transition-colors">6-Pack Box</a>
           </nav>
 
@@ -394,6 +395,60 @@ export default function VariantB2() {
                 <span className="text-xs font-bold">{prod.name}</span>
               </button>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── MEGA SLOGAN: "INNEHÅLLSFÖRTECKNING: EXAKT 1 SAK. OCH DET ÄR BARA FRUKT." ─── */}
+      <section id="ingredienser" className="py-24 px-6 bg-[#111] text-white border-y-[4px] border-[#111] relative overflow-hidden">
+        {/* Subtle glow blobs */}
+        <div className="absolute -top-32 -left-32 w-80 h-80 rounded-full bg-[#E8344A]/25 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-32 -right-32 w-80 h-80 rounded-full bg-[#FFD700]/20 blur-3xl pointer-events-none" />
+
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-[#FFD700] text-[#111] px-5 py-2 rounded-full text-xs font-black uppercase tracking-widest border-2 border-white shadow-[3px_3px_0_white] -rotate-2 mb-8">
+            <Sparkles className="w-4 h-4 text-[#E8344A]" />
+            <span>VÄRLDENS KORTASTE INNEHÅLLSFÖRTECKNING</span>
+          </div>
+
+          {/* Huge Bebas Neue Slogan */}
+          <div className="space-y-4">
+            <span className="text-xs sm:text-base font-extrabold uppercase tracking-widest text-[#FF758F] block">
+              VAD FINNS I PÅSEN?
+            </span>
+
+            <h2 className="vb2-font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] text-white tracking-wide">
+              INNEHÅLLER EXAKT <span className="text-[#FFD700] underline decoration-[#E8344A] decoration-wavy decoration-4">1 SAK.</span>
+              <br />
+              OCH DET ÄR <span className="bg-[#E8344A] text-white px-4 sm:px-6 py-1 rounded-2xl inline-block mt-3 shadow-[6px_6px_0_white] rotate-1">BARA ÄKTA FRUKT!</span>
+            </h2>
+          </div>
+
+          {/* Subtitle statement */}
+          <p className="vb2-font-body text-base sm:text-xl text-white/80 font-medium max-w-2xl mx-auto mt-8 leading-relaxed">
+            Inget tillsatt socker. Inga sötningsmedel. Inget gelatin. Inga E-nummer.
+            <br />
+            <strong className="text-white">100% ren, frystorkad frukt — plockad i säsong och krispad vid -40°C. Inget annat.</strong>
+          </p>
+
+          {/* 3 Bold Pill Badges */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto mt-12">
+            <div className="bg-white/10 border-2 border-white/20 rounded-2xl p-6 backdrop-blur-md shadow-lg">
+              <span className="text-4xl block mb-2">1️⃣</span>
+              <div className="vb2-font-display text-3xl text-[#FFD700] tracking-wide">1 INGREDIENS</div>
+              <p className="text-xs text-white/70 mt-1 font-medium">Bara jordgubbe, banan, äpple, hallon, björnbär eller mango.</p>
+            </div>
+            <div className="bg-white/10 border-2 border-white/20 rounded-2xl p-6 backdrop-blur-md shadow-lg">
+              <span className="text-4xl block mb-2">🚫</span>
+              <div className="vb2-font-display text-3xl text-[#FF758F] tracking-wide">0% TILLSATSER</div>
+              <p className="text-xs text-white/70 mt-1 font-medium">Inget tillsatt socker, konserveringsmedel eller palmolja.</p>
+            </div>
+            <div className="bg-white/10 border-2 border-white/20 rounded-2xl p-6 backdrop-blur-md shadow-lg">
+              <span className="text-4xl block mb-2">❄️</span>
+              <div className="vb2-font-display text-3xl text-[#6DBF4F] tracking-wide">-40°C SUBLIMERING</div>
+              <p className="text-xs text-white/70 mt-1 font-medium">Vakuumteknik låser in 98% av färskfruktens vitaminer & färg.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -570,6 +625,133 @@ export default function VariantB2() {
                   </div>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CUSTOMER REVIEWS (Vad säger föräldrar & barn i Sverige?) ─── */}
+      <section id="recensioner" className="py-24 px-6 bg-white border-t-[3px] border-[#111]">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-[#FFD700] text-[#111] px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider border-2 border-[#111] shadow-[2px_2px_0_#111] mb-4">
+              <span>⭐ 4.9 AV 5.0 · ÖVER 700 VERIFIERADE KÖP</span>
+            </div>
+            <h2 className="vb2-font-display text-5xl sm:text-6xl text-[#111] tracking-wide">
+              VAD SÄGER FÖRÄLDRAR I SVERIGE?
+            </h2>
+            <p className="text-sm sm:text-base text-[#666] max-w-xl mx-auto mt-2">
+              Svenska småbarnsföräldrar har bytt ut kladdiga russin, sockriga fruktstänger och tjat om godis. Här är deras ärliga recensioner.
+            </p>
+          </div>
+
+          {/* Testimonial Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Review 1 */}
+            <div className="bg-[#FFF0F2] rounded-3xl border-[3px] border-[#111] p-7 shadow-[6px_6px_0_#111] flex flex-col justify-between hover:-translate-y-1.5 transition-transform duration-200">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-amber-500 text-base font-bold">⭐⭐⭐⭐⭐</div>
+                  <span className="bg-white border border-[#111] text-[10px] font-bold px-2 py-0.5 rounded-full text-emerald-700 flex items-center gap-1">
+                    ✓ Verifierad köpare
+                  </span>
+                </div>
+                <h4 className="vb2-font-display text-2xl text-[#111] mb-2 leading-tight">
+                  ”INGET KLADD I BILBARNSTOLEN!”
+                </h4>
+                <p className="text-xs sm:text-sm text-[#444] leading-relaxed mb-6 font-normal">
+                  ”Slut på klibbiga fingrar och intorkade bananfläckar i bilen! Våra två barn (3 och 6 år) älskar jordgubbarna och hallonen. Att det verkligen bara är 100% frukt utan tillsatt socker gör att man kan bjuda varje dag med gott samvete.”
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#111]/15 flex items-center justify-between">
+                <div>
+                  <strong className="text-xs font-bold text-[#111] block">Emma Lindqvist</strong>
+                  <span className="text-[11px] text-[#777]">Mamma till 2 · Stockholm</span>
+                </div>
+                <span className="text-xs font-bold text-[#E8344A] bg-white border border-[#111] px-2.5 py-1 rounded-full">
+                  🍓 Jordgubbe
+                </span>
+              </div>
+            </div>
+
+            {/* Review 2 */}
+            <div className="bg-[#FFF8EE] rounded-3xl border-[3px] border-[#111] p-7 shadow-[6px_6px_0_#111] flex flex-col justify-between hover:-translate-y-1.5 transition-transform duration-200">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-amber-500 text-base font-bold">⭐⭐⭐⭐⭐</div>
+                  <span className="bg-white border border-[#111] text-[10px] font-bold px-2 py-0.5 rounded-full text-emerald-700 flex items-center gap-1">
+                    ✓ Verifierad köpare
+                  </span>
+                </div>
+                <h4 className="vb2-font-display text-2xl text-[#111] mb-2 leading-tight">
+                  ”RÄDDAREN I KÅNKEN-RYGGSÄCKEN”
+                </h4>
+                <p className="text-xs sm:text-sm text-[#444] leading-relaxed mb-6 font-normal">
+                  ”Påsarna väger ingenting och blir aldrig bruna eller mosade i skolväskan som vanliga äpplen och bananer. Vår son vägrade all frukt förut men älskar Tigern Ture och mangoskivorna. Ett genidrag!”
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#111]/15 flex items-center justify-between">
+                <div>
+                  <strong className="text-xs font-bold text-[#111] block">Johan & Sofia Berg</strong>
+                  <span className="text-[11px] text-[#777]">Föräldrar · Göteborg</span>
+                </div>
+                <span className="text-xs font-bold text-[#F07E1A] bg-white border border-[#111] px-2.5 py-1 rounded-full">
+                  🥭 Mango
+                </span>
+              </div>
+            </div>
+
+            {/* Review 3 */}
+            <div className="bg-[#F0FAE8] rounded-3xl border-[3px] border-[#111] p-7 shadow-[6px_6px_0_#111] flex flex-col justify-between hover:-translate-y-1.5 transition-transform duration-200">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-amber-500 text-base font-bold">⭐⭐⭐⭐⭐</div>
+                  <span className="bg-white border border-[#111] text-[10px] font-bold px-2 py-0.5 rounded-full text-emerald-700 flex items-center gap-1">
+                    ✓ Verifierad köpare
+                  </span>
+                </div>
+                <h4 className="vb2-font-display text-2xl text-[#111] mb-2 leading-tight">
+                  ”HELT PERFEKT CRUNCH FÖR FREDAGSMYSET”
+                </h4>
+                <p className="text-xs sm:text-sm text-[#444] leading-relaxed mb-6 font-normal">
+                  ”Vi köpte 6-packet för att testa alla djurkompisar. Det knastrar så härligt och smälter i munnen. Barnen tror knappt på att det inte är godis. Nu köper vi 2 skolboxar i månaden på prenumeration!”
+                </p>
+              </div>
+              <div className="pt-4 border-t border-[#111]/15 flex items-center justify-between">
+                <div>
+                  <strong className="text-xs font-bold text-[#111] block">Malin Karlsson</strong>
+                  <span className="text-[11px] text-[#777]">Förskolepedagog & mamma · Malmö</span>
+                </div>
+                <span className="text-xs font-bold text-[#6DBF4F] bg-white border border-[#111] px-2.5 py-1 rounded-full">
+                  🎒 6-Pack Box
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Social Proof Trust Bar */}
+          <div className="mt-14 bg-[#FDFBF7] border-[3px] border-[#111] rounded-2xl p-6 flex flex-wrap items-center justify-around gap-6 text-center shadow-[4px_4px_0_#111]">
+            <div className="flex items-center gap-3">
+              <span className="text-3xl">🇸🇪</span>
+              <div className="text-left">
+                <strong className="text-xs font-bold text-[#111] block">Svenskt Företag</strong>
+                <span className="text-[11px] text-[#666]">Packat & kontrollerat i Sverige</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-3xl">📦</span>
+              <div className="text-left">
+                <strong className="text-xs font-bold text-[#111] block">Blixtsnabb Leverans</strong>
+                <span className="text-[11px] text-[#666]">1–2 vardagar med PostNord</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-3xl">🔒</span>
+              <div className="text-left">
+                <strong className="text-xs font-bold text-[#111] block">Trygg Swish & Klarna</strong>
+                <span className="text-[11px] text-[#666]">Betala enkelt med mobilen</span>
+              </div>
             </div>
           </div>
         </div>
