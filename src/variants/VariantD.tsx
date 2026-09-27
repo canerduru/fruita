@@ -362,178 +362,210 @@ export default function VariantD() {
         </div>
       </section>
 
-      {/* ─── Section 2: Scrollytelling Pinned Stage (Scroll Experience) ─── */}
+      {/* ─── Section 2: Interactive Sublimation Process (Gap-Free Scrollytelling Stage) ─── */}
       <section
         id="scrollytelling"
         ref={scrollyContainerRef}
-        className="relative z-10 h-[360vh] bg-gradient-to-b from-[#0C0F12] via-[#11161B] to-[#0C0F12] border-t border-white/[0.08]"
+        className="relative z-10 py-20 md:py-28 px-6 bg-gradient-to-b from-[#0C0F12] via-[#11161B] to-[#0C0F12] border-t border-white/[0.08]"
       >
-        {/* Sticky viewport frame */}
-        <div className="sticky top-0 h-screen w-full flex flex-col justify-between p-6 md:p-12 overflow-hidden">
-          {/* Header indicator inside sticky canvas */}
-          <div className="flex items-center justify-between max-w-5xl mx-auto w-full border-b border-white/10 pb-4">
+        <div className="max-w-5xl mx-auto">
+          {/* Header indicator inside canvas */}
+          <div className="flex flex-col sm:flex-row items-center justify-between border-b border-white/10 pb-6 mb-12 gap-4">
             <div className="flex items-center gap-3">
               <span className="w-2.5 h-2.5 rounded-full bg-[#E8344A] animate-ping" />
-              <span className="text-xs uppercase tracking-widest font-bold text-white/50">
-                Processresan: Fas {scrollyPhase + 1} av 4
+              <span className="text-xs uppercase tracking-widest font-bold text-white/70">
+                Frystorkningens 4 Steg · Klicka eller byt fas
               </span>
             </div>
 
-            {/* Micro phase pill indicator */}
-            <div className="flex items-center gap-2">
-              {['1. Skörd', '2. -40°C Frys', '3. Sublimering', '4. Supercrunch'].map((label, idx) => (
-                <span
+            {/* Interactive phase pill buttons */}
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              {['1. Skörd', '2. -40°C Chockfrys', '3. Sublimering', '4. Supercrunch'].map((label, idx) => (
+                <button
                   key={idx}
-                  className={`text-[11px] px-2.5 py-1 rounded-full font-semibold transition-all duration-300 ${
+                  onClick={() => setScrollyPhase(idx)}
+                  className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all duration-300 cursor-pointer ${
                     scrollyPhase === idx
-                      ? 'bg-white text-black shadow-md'
-                      : 'text-white/40 bg-white/5'
+                      ? 'bg-white text-black shadow-lg shadow-white/10 scale-105'
+                      : 'text-white/60 bg-white/5 hover:bg-white/10 hover:text-white'
                   }`}
                 >
                   {label}
-                </span>
+                </button>
               ))}
             </div>
           </div>
 
           {/* Central Interactive Narrative Stage */}
-          <div className="max-w-4xl mx-auto w-full my-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Visual Morph Stage */}
-            <div className="flex items-center justify-center relative">
-              {/* Outer pulsing ring */}
-              <div
-                className="w-72 h-72 md:w-84 md:h-84 rounded-full border border-white/10 flex items-center justify-center relative transition-all duration-700"
-                style={{
-                  transform: `scale(${1 + scrollyPhase * 0.05}) rotate(${scrollyPhase * 30}deg)`,
-                  boxShadow: scrollyPhase === 1 ? '0 0 60px rgba(56, 189, 248, 0.25)' : 'none',
-                }}
-              >
-                {/* Visual changing based on phase */}
-                {scrollyPhase === 0 && (
-                  <div className="text-center animate-in fade-in zoom-in-75 duration-500">
-                    <div className="text-7xl md:text-8xl mb-2 drop-shadow-[0_10px_20px_rgba(232,52,74,0.3)]">
-                      🍓
+          <div className="bg-white/[0.03] border border-white/10 rounded-3xl p-8 md:p-14 backdrop-blur-xl relative overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
+              {/* Visual Morph Stage */}
+              <div className="flex flex-col items-center justify-center relative min-h-[280px]">
+                {/* Outer pulsing ring */}
+                <div
+                  className="w-64 h-64 sm:w-72 sm:h-72 rounded-full border border-white/15 flex items-center justify-center relative transition-all duration-500"
+                  style={{
+                    boxShadow: scrollyPhase === 1
+                      ? '0 0 50px rgba(56, 189, 248, 0.3)'
+                      : scrollyPhase === 2
+                      ? '0 0 50px rgba(234, 179, 8, 0.25)'
+                      : scrollyPhase === 3
+                      ? '0 0 50px rgba(16, 185, 129, 0.3)'
+                      : '0 0 40px rgba(232, 52, 74, 0.25)',
+                  }}
+                >
+                  {/* Visual changing based on phase */}
+                  {scrollyPhase === 0 && (
+                    <div className="text-center animate-in fade-in zoom-in-75 duration-300">
+                      <div className="text-7xl sm:text-8xl mb-2 drop-shadow-[0_10px_20px_rgba(232,52,74,0.4)]">
+                        🍓
+                      </div>
+                      <span className="text-xs font-bold text-[#E8344A] uppercase tracking-wider block">
+                        Solmogen & Saftig
+                      </span>
                     </div>
-                    <span className="text-xs font-bold text-[#E8344A] uppercase tracking-wider">
-                      Solmogen & Saftig
+                  )}
+
+                  {scrollyPhase === 1 && (
+                    <div className="text-center animate-in fade-in zoom-in-75 duration-300">
+                      <div className="text-7xl sm:text-8xl mb-2 drop-shadow-[0_10px_20px_rgba(56,189,248,0.5)]">
+                        ❄️🍓
+                      </div>
+                      <span className="text-xs font-bold text-sky-400 uppercase tracking-wider block">
+                        Djupfryst vid -40°C
+                      </span>
+                    </div>
+                  )}
+
+                  {scrollyPhase === 2 && (
+                    <div className="text-center animate-in fade-in zoom-in-75 duration-300">
+                      <div className="text-7xl sm:text-8xl mb-2 drop-shadow-[0_10px_20px_rgba(234,179,8,0.4)]">
+                        💨✨
+                      </div>
+                      <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block">
+                        Vattnet avdunstar (Sublimering)
+                      </span>
+                    </div>
+                  )}
+
+                  {scrollyPhase === 3 && (
+                    <div className="text-center animate-in fade-in zoom-in-75 duration-300">
+                      <div className="text-7xl sm:text-8xl mb-2 drop-shadow-[0_10px_25px_rgba(16,185,129,0.5)]">
+                        🎒✨
+                      </div>
+                      <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider block">
+                        15g Ren Supercrunch
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Step indicator below circle */}
+                <div className="mt-6 flex items-center gap-2">
+                  {[0, 1, 2, 3].map((step) => (
+                    <button
+                      key={step}
+                      onClick={() => setScrollyPhase(step)}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        scrollyPhase === step ? 'w-8 bg-white' : 'w-2 bg-white/20'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Text description per phase */}
+              <div className="space-y-6">
+                {scrollyPhase === 0 && (
+                  <div className="space-y-4 animate-in fade-in slide-in-from-bottom-3 duration-300">
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#E8344A] px-2.5 py-1 rounded bg-[#E8344A]/10 inline-block">
+                      Fas 01 · Skörd i säsong
                     </span>
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+                      Endast 100% solmogen frukt
+                    </h3>
+                    <p className="text-sm text-white/70 leading-relaxed">
+                      Frukten plockas när den är som sötast och fullproppad med naturliga vitaminer. Inga omogna frukter, inga artificiella mognadsgaser.
+                    </p>
+                    <div className="flex flex-wrap items-center gap-2.5 text-xs font-semibold text-white/80 pt-2">
+                      <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10">Vattenhalt: ~90%</span>
+                      <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10">Temperatur: +24°C</span>
+                    </div>
                   </div>
                 )}
 
                 {scrollyPhase === 1 && (
-                  <div className="text-center animate-in fade-in zoom-in-75 duration-500">
-                    <div className="text-7xl md:text-8xl mb-2 drop-shadow-[0_10px_20px_rgba(56,189,248,0.4)]">
-                      ❄️🍓
-                    </div>
-                    <span className="text-xs font-bold text-sky-400 uppercase tracking-wider">
-                      Djupfryst vid -40°C
+                  <div className="space-y-4 animate-in fade-in slide-in-from-bottom-3 duration-300">
+                    <span className="text-xs font-bold uppercase tracking-widest text-sky-400 px-2.5 py-1 rounded bg-sky-500/10 inline-block">
+                      Fas 02 · Chockfrysning
                     </span>
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+                      Cellstrukturen låses fast vid -40°C
+                    </h3>
+                    <p className="text-sm text-white/70 leading-relaxed">
+                      Till skillnad från vanlig värmetorkning (ugn) förstör vi inte vitaminerna eller cellväggarna. Frukten fryses blixtsnabbt för att bevara sin ursprungliga form och näring.
+                    </p>
+                    <div className="flex flex-wrap items-center gap-2.5 text-xs font-semibold text-white/80 pt-2">
+                      <span className="px-3 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-300">Temperatur: -40°C</span>
+                      <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10">Cellstatus: 100% intakt</span>
+                    </div>
                   </div>
                 )}
 
                 {scrollyPhase === 2 && (
-                  <div className="text-center animate-in fade-in zoom-in-75 duration-500">
-                    <div className="text-7xl md:text-8xl mb-2 drop-shadow-[0_10px_20px_rgba(234,179,8,0.3)]">
-                      💨✨
-                    </div>
-                    <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">
-                      Vattnet avdunstar (Sublimering)
+                  <div className="space-y-4 animate-in fade-in slide-in-from-bottom-3 duration-300">
+                    <span className="text-xs font-bold uppercase tracking-widest text-amber-400 px-2.5 py-1 rounded bg-amber-500/10 inline-block">
+                      Fas 03 · Vakuumkammare
                     </span>
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+                      Vattnet dunstar direkt från is till ånga
+                    </h3>
+                    <p className="text-sm text-white/70 leading-relaxed">
+                      Under extremt vakuum sker sublimering: iskristallerna förvandlas direkt till ånga utan att smälta till vätska. Resultatet? All färg, doft och 98% av vitaminerna är orörda.
+                    </p>
+                    <div className="flex flex-wrap items-center gap-2.5 text-xs font-semibold text-white/80 pt-2">
+                      <span className="px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300">Vatten avlägsnat: 98%</span>
+                      <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10">Tryck: 0.1 mbar</span>
+                    </div>
                   </div>
                 )}
 
                 {scrollyPhase === 3 && (
-                  <div className="text-center animate-in fade-in zoom-in-75 duration-500">
-                    <div className="text-7xl md:text-8xl mb-2 drop-shadow-[0_10px_25px_rgba(16,185,129,0.4)]">
-                      🎒✨
-                    </div>
-                    <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">
-                      15g Ren Supercrunch
+                  <div className="space-y-4 animate-in fade-in slide-in-from-bottom-3 duration-300">
+                    <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 px-2.5 py-1 rounded bg-emerald-500/10 inline-block">
+                      Fas 04 · Slutresultat
                     </span>
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+                      15g ren, frasig supercrunch
+                    </h3>
+                    <p className="text-sm text-white/70 leading-relaxed">
+                      En 15-gramspåse innehåller näring och smak från ~150g färsk frukt. Helt kladdfri, väger ingenting i skolväskan och smälter magiskt i munnen.
+                    </p>
+                    <div className="flex flex-wrap items-center gap-2.5 text-xs font-semibold text-white/80 pt-2">
+                      <span className="px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300">0% Tillsatt socker</span>
+                      <span className="px-3 py-1.5 rounded-full bg-white/5 border border-white/10">100% Återvinningsbar</span>
+                    </div>
                   </div>
                 )}
+
+                {/* Next / Previous step buttons */}
+                <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                  <button
+                    onClick={() => setScrollyPhase((prev) => (prev > 0 ? prev - 1 : 3))}
+                    className="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-semibold text-white/70 hover:text-white transition-colors cursor-pointer"
+                  >
+                    ← Föregående
+                  </button>
+                  <button
+                    onClick={() => setScrollyPhase((prev) => (prev < 3 ? prev + 1 : 0))}
+                    className="px-5 py-2 rounded-xl bg-white text-black font-semibold text-xs hover:bg-white/90 transition-colors shadow-sm flex items-center gap-1.5 cursor-pointer"
+                  >
+                    <span>{scrollyPhase === 3 ? 'Börja om' : 'Nästa steg'}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
             </div>
-
-            {/* Text description per phase */}
-            <div className="space-y-6">
-              {scrollyPhase === 0 && (
-                <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#E8344A]">
-                    Fas 01 · Skörd i säsong
-                  </span>
-                  <h3 className="text-3xl md:text-4xl font-extrabold text-white">
-                    Endast 100% solmogen frukt
-                  </h3>
-                  <p className="text-sm md:text-base text-white/70 leading-relaxed">
-                    Frukten plockas när den är som sötast och fullproppad med naturliga vitaminer. Inga omogna frukter, inga artificiella mognadsgaser.
-                  </p>
-                  <div className="flex items-center gap-3 text-xs font-semibold text-white/80 pt-2">
-                    <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">Vattenhalt: ~90%</span>
-                    <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">Temperatur: +24°C</span>
-                  </div>
-                </div>
-              )}
-
-              {scrollyPhase === 1 && (
-                <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  <span className="text-xs font-bold uppercase tracking-widest text-sky-400">
-                    Fas 02 · Chockfrysning
-                  </span>
-                  <h3 className="text-3xl md:text-4xl font-extrabold text-white">
-                    Cellstrukturen låses fast vid -40°C
-                  </h3>
-                  <p className="text-sm md:text-base text-white/70 leading-relaxed">
-                    Till skillnad från vanlig värmetorkning (ugn) förstör vi inte vitaminerna eller cellväggarna. Frukten fryses blixtsnabbt för att bevara sin ursprungliga form och näring.
-                  </p>
-                  <div className="flex items-center gap-3 text-xs font-semibold text-white/80 pt-2">
-                    <span className="px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-300">Temperatur: -40°C</span>
-                    <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">Cellstatus: 100% intakt</span>
-                  </div>
-                </div>
-              )}
-
-              {scrollyPhase === 2 && (
-                <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  <span className="text-xs font-bold uppercase tracking-widest text-amber-400">
-                    Fas 03 · Vakuumkammare
-                  </span>
-                  <h3 className="text-3xl md:text-4xl font-extrabold text-white">
-                    Vattnet dunstar direkt från is till ånga
-                  </h3>
-                  <p className="text-sm md:text-base text-white/70 leading-relaxed">
-                    Under extremt vakuum sker sublimering: iskristallerna förvandlas direkt till ånga utan att smälta till vätska. Resultatet? All färg, doft och 98% av vitaminerna är orörda.
-                  </p>
-                  <div className="flex items-center gap-3 text-xs font-semibold text-white/80 pt-2">
-                    <span className="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300">Vatten avlägsnat: 98%</span>
-                    <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">Tryck: 0.1 mbar</span>
-                  </div>
-                </div>
-              )}
-
-              {scrollyPhase === 3 && (
-                <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">
-                    Fas 04 · Slutresultat
-                  </span>
-                  <h3 className="text-3xl md:text-4xl font-extrabold text-white">
-                    15g ren, frasig supercrunch
-                  </h3>
-                  <p className="text-sm md:text-base text-white/70 leading-relaxed">
-                    En 15-gramspåse innehåller näring och smak från ~150g färsk frukt. Helt kladdfri, väger ingenting i skolväskan och smälter magiskt i munnen.
-                  </p>
-                  <div className="flex items-center gap-3 text-xs font-semibold text-white/80 pt-2">
-                    <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300">0% Tillsatt socker</span>
-                    <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10">100% Återvinningsbar</span>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Bottom helper prompt */}
-          <div className="text-center text-xs text-white/40">
-            {scrollyPhase < 3 ? 'Fortsätt skrolla för nästa steg ↓' : 'Perfekt! Upptäck Crunch Lab nedan ↓'}
           </div>
         </div>
       </section>
