@@ -146,8 +146,8 @@ export default function VariantB() {
         }
 
         /* ── Utility classes ──────────────────────────────────────────────── */
-        .diagonal-clip     { clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
-        .diagonal-clip-rev { clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 100%); }
+        .diagonal-clip     { clip-path: polygon(0 0, 100% 0, 100% calc(100% - 48px), 0 100%); }
+        .diagonal-clip-rev { clip-path: none; }
 
         .product-card { transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
         .product-card:hover { transform: translateY(-8px) scale(1.02); }
@@ -168,6 +168,7 @@ export default function VariantB() {
 
         @media (max-width: 768px) {
           .vb-header-nav { display: none !important; }
+          .diagonal-clip { clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), 0 100%) !important; }
           .vb-hero-grid {
             grid-template-columns: 1fr !important;
             padding: 44px 16px 40px !important;
@@ -483,7 +484,7 @@ export default function VariantB() {
         </div>
 
         {/* Flavor selector dots */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: 12, position: 'absolute', bottom: 40, left: '50%', transform: 'translateX(-50%)' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 12, position: 'absolute', bottom: 54, left: '50%', transform: 'translateX(-50%)' }}>
           {SINGLES.map((p, i) => (
             <button key={p.id} onClick={() => { setActiveIdx(i); setHeroProduct(p); }}
               style={{
@@ -496,9 +497,8 @@ export default function VariantB() {
       </section>
 
       {/* ─── PRODUCTS SECTION ─── */}
-      <section style={{ background: colors.bg, paddingBottom: 0, transition: 'background 0.6s' }} className="diagonal-clip-rev">
-        <div style={{ background: '#FDF8F4', paddingTop: 80 }}>
-          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 20px 80px' }}>
+      <section style={{ background: '#FDF8F4', padding: '60px 0 80px', position: 'relative' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 20px' }}>
 
             {/* Section header */}
             <div style={{ textAlign: 'center', marginBottom: 48 }}>
@@ -616,8 +616,7 @@ export default function VariantB() {
               })}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* ─── INGREDIENTS SECTION (Farsking "Innehåller" style) ─── */}
       <section style={{ background: '#FFF5E8', padding: '80px 20px', position: 'relative', overflow: 'hidden' }}>
