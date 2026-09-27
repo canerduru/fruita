@@ -32,17 +32,17 @@ export const Header: React.FC = () => {
         <div className="bg-white/85 backdrop-blur-xl border border-stone-200/90 shadow-xl shadow-stone-900/5 rounded-3xl px-4 sm:px-6 py-3 flex items-center justify-between">
           
           {/* Brand Logo */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="flex items-center gap-2.5 text-left group cursor-pointer"
+              className="flex items-center gap-1.5 sm:gap-2.5 text-left group cursor-pointer"
             >
               <img
                 src={`${import.meta.env.BASE_URL}images/logo.png`}
                 alt="Fruita Logo"
-                className="h-9 w-auto object-contain group-hover:scale-105 transition-transform"
+                className="h-7 sm:h-9 w-auto object-contain group-hover:scale-105 transition-transform flex-shrink-0"
               />
-              <span className="text-[10px] bg-[#EAF2EC] text-[#1E3A27] font-black px-1.5 py-0.5 rounded-md border border-[#CAD8CE] self-center">
+              <span className="text-[9px] sm:text-[10px] bg-[#EAF2EC] text-[#1E3A27] font-black px-1.5 py-0.5 rounded-md border border-[#CAD8CE] self-center whitespace-nowrap flex-shrink-0">
                 {language === 'sv' ? '100% REN' : '100% PURE'}
               </span>
             </button>
@@ -83,12 +83,12 @@ export const Header: React.FC = () => {
           </nav>
 
           {/* Right Action Icons: Language, Supabase Auth, Cart Drawer */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-1.5 sm:space-x-3 flex-shrink-0">
             {/* Language Switcher */}
-            <div className="flex items-center bg-[#EFE9DF] rounded-full p-0.5 text-xs font-semibold border border-[#DFD6C8]">
+            <div className="flex items-center bg-[#EFE9DF] rounded-full p-0.5 text-[10px] sm:text-xs font-semibold border border-[#DFD6C8]">
               <button
                 onClick={() => setLanguage('sv')}
-                className={`px-2.5 py-1 rounded-full transition-all flex items-center gap-1 ${
+                className={`px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full transition-all flex items-center gap-1 ${
                   language === 'sv'
                     ? 'bg-[#2D4033] text-white shadow-xs'
                     : 'text-[#56685B] hover:text-[#233529]'
@@ -99,7 +99,7 @@ export const Header: React.FC = () => {
               </button>
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-2.5 py-1 rounded-full transition-all flex items-center gap-1 ${
+                className={`px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full transition-all flex items-center gap-1 ${
                   language === 'en'
                     ? 'bg-[#2D4033] text-white shadow-xs'
                     : 'text-[#56685B] hover:text-[#233529]'
@@ -116,7 +116,7 @@ export const Header: React.FC = () => {
                 <div className="relative">
                   <button
                     onClick={() => setUserDropdownOpen(!userDropdownOpen)}
-                    className="flex items-center gap-2 text-xs font-medium text-[#2D4033] bg-[#EFE9DF] hover:bg-[#E5DDCF] px-3 py-1.5 rounded-full transition-colors border border-[#DFD6C8]"
+                    className="flex items-center gap-1.5 text-xs font-medium text-[#2D4033] bg-[#EFE9DF] hover:bg-[#E5DDCF] px-2 sm:px-3 py-1 sm:py-1.5 rounded-full transition-colors border border-[#DFD6C8]"
                   >
                     <div className="w-5 h-5 rounded-full bg-[#2D4033] text-white flex items-center justify-center text-[10px] font-bold">
                       {user.name.charAt(0).toUpperCase()}
@@ -149,7 +149,8 @@ export const Header: React.FC = () => {
               ) : (
                 <button
                   onClick={openAuthModal}
-                  className="flex items-center gap-1.5 text-xs font-medium text-[#2D4033] hover:text-[#18261C] px-3 py-1.5 rounded-full hover:bg-[#EFE9DF] transition-colors border border-transparent hover:border-[#DFD6C8]"
+                  className="flex items-center gap-1 text-xs font-medium text-[#2D4033] hover:text-[#18261C] p-1.5 sm:px-3 sm:py-1.5 rounded-full hover:bg-[#EFE9DF] transition-colors border border-transparent hover:border-[#DFD6C8]"
+                  title={t.nav.signIn}
                 >
                   <UserIcon className="w-4 h-4" />
                   <span className="hidden sm:inline">{t.nav.signIn}</span>
@@ -161,10 +162,10 @@ export const Header: React.FC = () => {
             <button
               onClick={openCart}
               aria-label={t.nav.cart}
-              className="flex items-center gap-2 bg-[#2D4033] hover:bg-[#1E2E23] text-[#FAF7F2] px-3.5 py-2 rounded-full font-medium text-xs shadow-sm transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="flex items-center gap-1.5 sm:gap-2 bg-[#2D4033] hover:bg-[#1E2E23] text-[#FAF7F2] px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-full font-medium text-xs shadow-sm transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
               <div className="relative">
-                <ShoppingBag className="w-4 h-4 text-[#F3EFE8]" />
+                <ShoppingBag className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-[#F3EFE8]" />
                 {itemCount > 0 && (
                   <span className="absolute -top-2 -right-2 bg-[#C85D3D] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center animate-bounce">
                     {itemCount}
@@ -179,10 +180,10 @@ export const Header: React.FC = () => {
             {/* Mobile Hamburger Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#2D4033] hover:text-[#18261C]"
+              className="lg:hidden p-1 sm:p-2 text-[#2D4033] hover:text-[#18261C]"
               aria-label="Toggle Navigation"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 sm:w-6 h-5 sm:h-6" /> : <Menu className="w-5 sm:w-6 h-5 sm:h-6" />}
             </button>
           </div>
         </div>
