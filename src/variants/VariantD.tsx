@@ -358,6 +358,33 @@ export default function VariantD() {
               <span>Köp Provpaket · 29 kr</span>
             </button>
           </div>
+
+          {/* Real Dried Fruit Preview Strip in Hero */}
+          <div className="mt-14 pt-8 border-t border-white/10 max-w-xl mx-auto">
+            <span className="text-[11px] uppercase tracking-widest text-white/50 font-bold block mb-4">
+              Äkta Frystorkade Bär & Frukter · Klicka för att utforska
+            </span>
+            <div className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap">
+              {FRUITS_KINETIC.map((fruit) => (
+                <button
+                  key={fruit.id}
+                  onClick={() => switchFruit(fruit)}
+                  className={`group flex items-center gap-2.5 px-3 py-1.5 rounded-full border transition-all duration-300 cursor-pointer ${
+                    activeFruit.id === fruit.id
+                      ? 'bg-white text-black border-white shadow-lg scale-105'
+                      : 'bg-white/5 text-white/70 border-white/10 hover:bg-white/10 hover:text-white'
+                  }`}
+                >
+                  <img
+                    src={`${base}${fruit.image}`}
+                    alt={fruit.nameShort}
+                    className="w-6 h-6 rounded-full object-cover border border-white/30"
+                  />
+                  <span className="text-xs font-semibold">{fruit.nameShort}</span>
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -416,44 +443,70 @@ export default function VariantD() {
                   {/* Visual changing based on phase */}
                   {scrollyPhase === 0 && (
                     <div className="text-center animate-in fade-in zoom-in-75 duration-300">
-                      <div className="text-7xl sm:text-8xl mb-2 drop-shadow-[0_10px_20px_rgba(232,52,74,0.4)]">
-                        🍓
+                      <div className="w-36 h-36 sm:w-44 sm:h-44 mx-auto mb-3 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20">
+                        <img
+                          src={`${base}images/products/jordgubbe.jpg`}
+                          alt="Solmogen frukt"
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <span className="text-xs font-bold text-[#E8344A] uppercase tracking-wider block">
-                        Solmogen & Saftig
+                        Solmogen & Skördad i Säsong
                       </span>
                     </div>
                   )}
 
                   {scrollyPhase === 1 && (
                     <div className="text-center animate-in fade-in zoom-in-75 duration-300">
-                      <div className="text-7xl sm:text-8xl mb-2 drop-shadow-[0_10px_20px_rgba(56,189,248,0.5)]">
-                        ❄️🍓
+                      <div className="w-36 h-36 sm:w-44 sm:h-44 mx-auto mb-3 rounded-2xl overflow-hidden shadow-2xl border-2 border-sky-400/40 relative">
+                        <img
+                          src={`${base}images/products/jordgubbe.jpg`}
+                          alt="Djupfryst vid -40C"
+                          className="w-full h-full object-cover brightness-90 contrast-125"
+                        />
+                        <div className="absolute inset-0 bg-sky-400/20 backdrop-blur-[1px]" />
+                        <span className="absolute top-2 right-2 bg-sky-500 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded-full">
+                          -40°C
+                        </span>
                       </div>
                       <span className="text-xs font-bold text-sky-400 uppercase tracking-wider block">
-                        Djupfryst vid -40°C
+                        Djupfryst & Låst Cellstruktur
                       </span>
                     </div>
                   )}
 
                   {scrollyPhase === 2 && (
                     <div className="text-center animate-in fade-in zoom-in-75 duration-300">
-                      <div className="text-7xl sm:text-8xl mb-2 drop-shadow-[0_10px_20px_rgba(234,179,8,0.4)]">
-                        💨✨
+                      <div className="w-36 h-36 sm:w-44 sm:h-44 mx-auto mb-3 rounded-2xl overflow-hidden shadow-2xl border-2 border-amber-400/40 relative">
+                        <img
+                          src={`${base}images/products/jordgubbe.png`}
+                          alt="Vakuum Sublimering"
+                          className="w-full h-full object-contain p-2"
+                        />
+                        <div className="absolute bottom-2 left-2 bg-amber-500/90 text-black text-[10px] font-bold px-2 py-0.5 rounded-full">
+                          98% Vatten Borta
+                        </div>
                       </div>
                       <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block">
-                        Vattnet avdunstar (Sublimering)
+                        Vakuum Sublimering (Ånga)
                       </span>
                     </div>
                   )}
 
                   {scrollyPhase === 3 && (
                     <div className="text-center animate-in fade-in zoom-in-75 duration-300">
-                      <div className="text-7xl sm:text-8xl mb-2 drop-shadow-[0_10px_25px_rgba(16,185,129,0.5)]">
-                        🎒✨
+                      <div className="w-36 h-36 sm:w-44 sm:h-44 mx-auto mb-3 rounded-2xl overflow-hidden shadow-2xl border-2 border-emerald-400/40 relative bg-white/5">
+                        <img
+                          src={`${base}images/products/jordgubbe.png`}
+                          alt="15g Ren Supercrunch"
+                          className="w-full h-full object-contain p-2"
+                        />
+                        <div className="absolute top-2 right-2 bg-emerald-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+                          15g Portion
+                        </div>
                       </div>
                       <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider block">
-                        15g Ren Supercrunch
+                        15g Ren Frasig Supercrunch
                       </span>
                     </div>
                   )}
@@ -579,7 +632,7 @@ export default function VariantD() {
             The Crunch Lab
           </h2>
           <p className="text-sm md:text-base text-white/60 max-w-xl mx-auto mt-3">
-            Klicka på frukten för att utlösa en Anime.js partikelsmäll och testa crunchens decibel.
+            Klicka på den frystorkade frukten för att utlösa en Anime.js partikelsmäll och testa crunchens krispighet.
           </p>
         </div>
 
@@ -595,18 +648,26 @@ export default function VariantD() {
             <span className="text-[#06D6A0]">{activeFruit.crunches}</span>
           </div>
 
-          {/* Giant Clickable Fruit with Anime.js Elasticity */}
-          <div className="my-6">
+          {/* Real Freeze-Dried Fruit Interactive Button */}
+          <div className="my-8 flex justify-center">
             <button
               onClick={triggerCrunchExplosion}
-              className="group relative inline-flex items-center justify-center p-8 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 transition-all duration-300 active:scale-90 focus:outline-none cursor-pointer"
+              className="group relative flex flex-col items-center justify-center p-6 sm:p-8 rounded-3xl bg-white/[0.05] hover:bg-white/[0.09] border border-white/15 transition-all duration-300 active:scale-95 focus:outline-none cursor-pointer shadow-2xl backdrop-blur-md"
               title="Klicka för att crunsha!"
             >
-              <span className="text-8xl md:text-9xl transition-transform duration-300 group-hover:scale-110 select-none">
-                {activeFruit.emoji}
-              </span>
-              <span className="absolute -bottom-2 bg-[#E8344A] text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-lg">
-                KLICKA HÄR!
+              <div className="w-52 h-52 sm:w-64 sm:h-64 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 relative group-hover:scale-105 transition-transform duration-300 bg-black/40">
+                <img
+                  src={`${base}${activeFruit.image}`}
+                  alt={activeFruit.name}
+                  className="w-full h-full object-cover select-none pointer-events-none"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <span className="absolute bottom-3 left-3 text-xs font-bold text-white bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg border border-white/20">
+                  {activeFruit.name} · {activeFruit.crunches}
+                </span>
+              </div>
+              <span className="mt-4 bg-[#E8344A] hover:bg-[#D02036] text-white text-xs font-bold px-5 py-2 rounded-full shadow-lg flex items-center gap-2 tracking-wider uppercase">
+                <Sparkles className="w-3.5 h-3.5" /> KLICKA FÖR ATT CRUNSHA!
               </span>
             </button>
           </div>
@@ -615,26 +676,31 @@ export default function VariantD() {
             Du har crunshat <strong className="text-white">{crunchCount}</strong> gånger!
           </div>
 
-          {/* Fruit selector inside lab */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mt-8 pt-6 border-t border-white/10">
+          {/* Fruit selector with real thumbnails */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mt-8 pt-6 border-t border-white/10">
             {FRUITS_KINETIC.map((fruit) => (
               <button
                 key={fruit.id}
                 onClick={() => switchFruit(fruit)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
                   activeFruit.id === fruit.id
-                    ? 'bg-white text-black shadow-md'
-                    : 'bg-white/5 text-white/60 hover:text-white hover:bg-white/10'
+                    ? 'bg-white text-black shadow-lg scale-105'
+                    : 'bg-white/5 text-white/70 hover:text-white hover:bg-white/10'
                 }`}
               >
-                {fruit.emoji} {fruit.nameShort}
+                <img
+                  src={`${base}${fruit.image}`}
+                  alt={fruit.nameShort}
+                  className="w-5 h-5 rounded-full object-cover border border-white/20"
+                />
+                <span>{fruit.nameShort}</span>
               </button>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── Section 4: Interactive Flavor Showcase (Anime.js Driven) ─── */}
+      {/* ─── Section 4: Interactive Flavor Showcase (Real Photography) ─── */}
       <section id="flavors" className="py-20 px-6 max-w-6xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
@@ -654,15 +720,24 @@ export default function VariantD() {
           {FRUITS_KINETIC.map((fruit) => (
             <div
               key={fruit.id}
-              className="fruit-stage-card bg-white/[0.04] border border-white/10 hover:border-white/20 rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group"
+              className="fruit-stage-card bg-white/[0.04] border border-white/10 hover:border-white/20 rounded-3xl p-5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group overflow-hidden"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-4xl">{fruit.emoji}</span>
-                  <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-white/5 text-white/70 border border-white/10">
+                {/* Real Freeze-Dried Fruit Photograph Header */}
+                <div className="w-full h-44 rounded-2xl overflow-hidden mb-4 relative border border-white/10 group-hover:border-white/25 transition-all bg-black/40">
+                  <img
+                    src={`${base}${fruit.image}`}
+                    alt={fruit.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-md border border-white/20 text-white font-mono text-[10px] px-2.5 py-0.5 rounded-full">
                     {fruit.temp}
-                  </span>
+                  </div>
+                  <div className="absolute bottom-2.5 left-2.5 bg-[#E8344A] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md shadow-md">
+                    100% Frystorkad Frukt
+                  </div>
                 </div>
+
                 <h3 className="text-xl font-bold text-white mb-1 group-hover:text-[#FF758F] transition-colors">
                   {fruit.name}
                 </h3>
@@ -678,7 +753,7 @@ export default function VariantD() {
                 </div>
                 <button
                   onClick={() => addToCart(fruit)}
-                  className="bg-white/10 hover:bg-white text-white hover:text-black font-semibold text-xs px-4 py-2.5 rounded-full transition-all duration-200 active:scale-95 flex items-center gap-1.5 shadow-sm"
+                  className="bg-white/10 hover:bg-white text-white hover:text-black font-semibold text-xs px-4 py-2.5 rounded-full transition-all duration-200 active:scale-95 flex items-center gap-1.5 shadow-sm cursor-pointer"
                 >
                   <ShoppingBag className="w-3.5 h-3.5" />
                   <span>Lägg till</span>
@@ -691,7 +766,16 @@ export default function VariantD() {
           <div className="bg-gradient-to-br from-[#E8344A]/20 via-white/[0.05] to-transparent border border-[#E8344A]/30 rounded-3xl p-6 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="text-4xl">🎒</span>
+                <div className="flex -space-x-2 overflow-hidden py-1">
+                  {FRUITS_KINETIC.map((fruit) => (
+                    <img
+                      key={fruit.id}
+                      src={`${base}${fruit.image}`}
+                      alt={fruit.nameShort}
+                      className="inline-block h-9 w-9 rounded-full ring-2 ring-[#11161B] object-cover"
+                    />
+                  ))}
+                </div>
                 <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-[#E8344A] text-white">
                   POPULÄR
                 </span>
