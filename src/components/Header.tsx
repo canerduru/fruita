@@ -35,28 +35,16 @@ export const Header: React.FC = () => {
           <div className="flex items-center gap-3">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="flex items-center gap-3 text-left group cursor-pointer"
+              className="flex items-center gap-2.5 text-left group cursor-pointer"
             >
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#1E3A27] to-[#122418] text-[#FAF7F2] flex items-center justify-center shadow-md shadow-[#1E3A27]/20 group-hover:scale-105 transition-transform">
-                <svg className="w-6 h-6 text-[#A0D468]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 2a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9A9 9 0 0 1 3 11C3 6.03 7.03 2 12 2z"/>
-                  <path d="M12 6c-2 2-3 4-3 6a3 3 0 0 0 6 0c0-2-1-4-3-6z" fill="#A0D468" fillOpacity="0.5"/>
-                  <path d="M12 2v4"/>
-                </svg>
-              </div>
-              <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-2xl font-black tracking-tight text-[#17231A] block leading-none">
-                    Fruita
-                  </span>
-                  <span className="text-[10px] bg-[#EAF2EC] text-[#1E3A27] font-black px-1.5 py-0.5 rounded-md border border-[#CAD8CE]">
-                    {language === 'sv' ? '100% REN' : '100% PURE'}
-                  </span>
-                </div>
-                <span className="text-[10px] tracking-wider text-[#526658] font-bold block mt-0.5">
-                  {language === 'sv' ? 'Något annorlunda · Frystorkad Frukt' : 'Something Different · Freeze-Dried Fruit'}
-                </span>
-              </div>
+              <img
+                src={`${import.meta.env.BASE_URL}images/logo.png`}
+                alt="Fruita Logo"
+                className="h-9 w-auto object-contain group-hover:scale-105 transition-transform"
+              />
+              <span className="text-[10px] bg-[#EAF2EC] text-[#1E3A27] font-black px-1.5 py-0.5 rounded-md border border-[#CAD8CE] self-center">
+                {language === 'sv' ? '100% REN' : '100% PURE'}
+              </span>
             </button>
           </div>
 

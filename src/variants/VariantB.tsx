@@ -172,13 +172,11 @@ export default function VariantB() {
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 64 }}>
           {/* Logo */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            {/* Logo: Fredoka One is acceptable ONLY here */}
-            <div style={{
-              background: '#E8344A', color: '#fff', fontFamily: "var(--font-logo)",
-              fontSize: 24, fontWeight: 900, padding: '5px 14px', borderRadius: 8,
-              border: '2px solid #111', letterSpacing: '0.04em', transform: 'rotate(-1deg)',
-              boxShadow: '3px 3px 0 #111', lineHeight: 1.2
-            }}>FRUITA</div>
+            <img
+              src={`${import.meta.env.BASE_URL}images/logo.png`}
+              alt="Fruita Logo"
+              style={{ height: 40, width: 'auto', objectFit: 'contain' }}
+            />
             <span style={{
               fontFamily: "var(--font-body)", fontSize: 12, fontWeight: 500,
               color: '#666', letterSpacing: '0.01em', fontStyle: 'italic'
@@ -796,10 +794,11 @@ export default function VariantB() {
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 40, marginBottom: 40 }}>
             <div>
-              <div style={{
-                fontFamily: "var(--font-logo)",
-                fontSize: 22, color: '#E8344A', marginBottom: 10
-              }}>FRUITA</div>
+              <img
+                src={`${import.meta.env.BASE_URL}images/logo-white.png`}
+                alt="Fruita Logo"
+                style={{ height: 38, width: 'auto', objectFit: 'contain', marginBottom: 14 }}
+              />
               <p style={{ fontFamily: "var(--font-body)", color: '#666', fontSize: 13, fontWeight: 400, lineHeight: 1.75 }}>
                 Something Different.<br />100% real fruit,<br />freeze-dried to perfection.
               </p>

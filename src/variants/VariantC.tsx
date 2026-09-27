@@ -194,13 +194,13 @@ export default function VariantC() {
         }}
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="w-8 h-8 rounded-full bg-[#3D6647] flex items-center justify-center text-white font-bold text-sm shadow-sm">
-              F
-            </span>
-            <span className="text-xl font-bold tracking-tight text-[#1F2A37]">
-              fruita<span className="text-[#3D6647] font-semibold text-xs ml-1.5 px-2 py-0.5 rounded-full bg-[#3D6647]/10">pure</span>
-            </span>
+          <div className="flex items-center gap-2">
+            <img
+              src={`${base}images/logo.png`}
+              alt="Fruita Logo"
+              className="h-9 w-auto object-contain"
+            />
+            <span className="text-[#3D6647] font-semibold text-xs px-2 py-0.5 rounded-full bg-[#3D6647]/10">pure</span>
           </div>
 
           <nav className="hidden md:flex items-center gap-8 text-[14px] font-medium text-[#4B5563]">
@@ -764,11 +764,13 @@ export default function VariantC() {
       {/* ─── Footer ─── */}
       <footer className="py-12 px-6 bg-[#1F2A37] text-white/70 text-xs">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2 text-white font-bold text-base">
-            <span className="w-6 h-6 rounded-full bg-[#3D6647] flex items-center justify-center text-xs">
-              F
-            </span>
-            <span>fruita pure</span>
+          <div className="flex items-center gap-2">
+            <img
+              src={`${base}images/logo-white.png`}
+              alt="Fruita Logo"
+              className="h-8 w-auto object-contain"
+            />
+            <span className="text-[#3D6647] font-semibold text-xs px-2 py-0.5 rounded-full bg-[#3D6647]/20 text-white">pure</span>
           </div>
           <div className="flex items-center gap-6">
             <span>© {new Date().getFullYear()} Fruita Nordic AB</span>

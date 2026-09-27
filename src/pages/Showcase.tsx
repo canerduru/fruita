@@ -71,11 +71,15 @@ export default function Showcase() {
 
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: 56 }}>
-        <div style={{ fontSize: 48, marginBottom: 16, animation: 'float 3s ease-in-out infinite' }}>🍓</div>
+        <img
+          src={`${import.meta.env.BASE_URL}images/logo-white.png`}
+          alt="Fruita Logo"
+          style={{ height: 60, width: 'auto', margin: '0 auto 20px', display: 'block' }}
+        />
         <h1 style={{
-          color: '#fff', fontSize: 'clamp(28px,5vw,52px)', fontWeight: 900,
+          color: '#fff', fontSize: 'clamp(28px,5vw,48px)', fontWeight: 900,
           margin: '0 0 12px', letterSpacing: -1
-        }}>Fruita — Design Variants</h1>
+        }}>Design Variants</h1>
         <p style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 600, fontSize: 16, margin: 0 }}>
           Compare all four designs and choose the direction for your brand
         </p>

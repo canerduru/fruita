@@ -280,15 +280,14 @@ export default function VariantD() {
       {/* ─── Sticky Glass Header ─── */}
       <header className="sticky top-0 z-50 bg-[#0C0F12]/80 backdrop-blur-xl border-b border-white/[0.08]">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#E8344A] to-[#FF758F] flex items-center justify-center font-bold text-white shadow-lg shadow-rose-900/30">
-              F
-            </span>
-            <span className="text-xl font-extrabold tracking-tight text-white flex items-center gap-2">
-              fruita
-              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/10 text-white/80 border border-white/10 uppercase tracking-widest">
-                Kinetic
-              </span>
+          <div className="flex items-center gap-2">
+            <img
+              src={`${base}images/logo-white.png`}
+              alt="Fruita Logo"
+              className="h-8 w-auto object-contain"
+            />
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/10 text-white/80 border border-white/10 uppercase tracking-widest">
+              Kinetic
             </span>
           </div>
 
@@ -726,9 +725,15 @@ export default function VariantD() {
       {/* ─── Footer ─── */}
       <footer className="py-12 px-6 border-t border-white/10 bg-[#080A0D] text-white/50 text-xs">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-3 text-white font-bold text-sm">
-            <span className="w-6 h-6 rounded-lg bg-[#E8344A] flex items-center justify-center text-xs">F</span>
-            <span>fruita kinetic</span>
+          <div className="flex items-center gap-2">
+            <img
+              src={`${base}images/logo-white.png`}
+              alt="Fruita Logo"
+              className="h-7 w-auto object-contain"
+            />
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/10 text-white/80 border border-white/10 uppercase tracking-widest">
+              Kinetic
+            </span>
           </div>
           <div>© {new Date().getFullYear()} Fruita Nordic AB · Drivs med Anime.js & Scroll Experience</div>
           <div className="flex items-center gap-4 text-white/80 font-mono text-[11px]">

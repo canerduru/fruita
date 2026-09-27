@@ -19,17 +19,11 @@ export const Footer: React.FC = () => {
           {/* Brand Info & Address */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-xl bg-[#274130] text-[#A0D468] flex items-center justify-center border border-[#3E5C46]">
-                <Leaf className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="text-2xl font-black tracking-tight text-white block leading-none">
-                  Fruita SWE
-                </span>
-                <span className="text-[10px] text-[#A0D468] font-bold tracking-wider uppercase">
-                  {language === 'sv' ? 'Något annorlunda · 100% Frukt' : 'Something Different · 100% Fruit'}
-                </span>
-              </div>
+              <img
+                src={`${import.meta.env.BASE_URL}images/logo-white.png`}
+                alt="Fruita Logo"
+                className="h-10 w-auto object-contain"
+              />
             </div>
 
             <p className="text-xs sm:text-sm text-stone-300 max-w-sm leading-relaxed font-light">

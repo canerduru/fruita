@@ -40,14 +40,11 @@ export function VariantNav() {
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-        <span style={{
-          display: 'inline-block',
-          width: 8,
-          height: 8,
-          borderRadius: '50%',
-          background: '#48BB78',
-          boxShadow: '0 0 8px #48BB78',
-        }} />
+        <img
+          src={`${import.meta.env.BASE_URL}images/logo-white.png`}
+          alt="Fruita"
+          style={{ height: 18, width: 'auto', objectFit: 'contain', marginRight: 4 }}
+        />
         {!collapsed && (
           <span style={{
             color: 'rgba(255,255,255,0.6)',
