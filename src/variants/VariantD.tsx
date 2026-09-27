@@ -32,7 +32,7 @@ const FRUITS_KINETIC = [
     crunchDb: '48 dB',
     crunches: '100% frasigt knaster',
     description: 'Solmogna svenska & egeiska jordgubbar. Frystorkade till absolut krispig perfektion.',
-    image: 'images/products/jordgubbe.jpg',
+    image: 'images/products/jordgubbe.png',
   },
   {
     id: 'fruita-banan',
@@ -46,7 +46,7 @@ const FRUITS_KINETIC = [
     crunchDb: '42 dB',
     crunches: 'Mjuk krispighet',
     description: 'Gyllene bananmynt med intensiv naturlig kolaton utan tillsatt socker.',
-    image: 'images/products/banan.jpg',
+    image: 'images/products/banan.png',
   },
   {
     id: 'fruita-apple',
@@ -74,7 +74,7 @@ const FRUITS_KINETIC = [
     crunchDb: '46 dB',
     crunches: 'Luftigt frasig',
     description: 'Vilda hallon med bevarad hel bärform och explosiv naturlig hallonsmak.',
-    image: 'images/products/hallon.jpg',
+    image: 'images/products/hallon.png',
   },
   {
     id: 'fruita-bjornbar',
@@ -88,7 +88,21 @@ const FRUITS_KINETIC = [
     crunchDb: '45 dB',
     crunches: 'Djup bärkrisp',
     description: 'Mörklila skogsbär fyllda med antioxidanter och spröd textur.',
-    image: 'images/products/bjornbar.jpg',
+    image: 'images/products/bjornbar.png',
+  },
+  {
+    id: 'fruita-mango',
+    name: 'Fruita Mango',
+    nameShort: 'Mango',
+    emoji: '🥭',
+    color: '#F97316',
+    bgGradient: 'from-orange-500/10 via-amber-500/5 to-transparent',
+    accentColor: '#FB923C',
+    temp: '-39°C',
+    crunchDb: '44 dB',
+    crunches: 'Tropisk krispighet',
+    description: 'Söt, gyllene tropisk mango i krispiga bitar med rik aromatisk sötma.',
+    image: 'images/products/mango.png',
   },
 ];
 
@@ -655,14 +669,13 @@ export default function VariantD() {
               className="group relative flex flex-col items-center justify-center p-6 sm:p-8 rounded-3xl bg-white/[0.05] hover:bg-white/[0.09] border border-white/15 transition-all duration-300 active:scale-95 focus:outline-none cursor-pointer shadow-2xl backdrop-blur-md"
               title="Klicka för att crunsha!"
             >
-              <div className="w-52 h-52 sm:w-64 sm:h-64 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 relative group-hover:scale-105 transition-transform duration-300 bg-black/40">
+              <div className="w-56 h-64 sm:w-64 sm:h-72 rounded-3xl relative group-hover:scale-105 transition-transform duration-300 flex items-center justify-center p-2">
                 <img
                   src={`${base}${activeFruit.image}`}
                   alt={activeFruit.name}
-                  className="w-full h-full object-cover select-none pointer-events-none"
+                  className="h-full w-auto object-contain select-none pointer-events-none drop-shadow-[0_25px_35px_rgba(0,0,0,0.6)]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <span className="absolute bottom-3 left-3 text-xs font-bold text-white bg-black/60 backdrop-blur-md px-3 py-1 rounded-lg border border-white/20">
+                <span className="absolute bottom-1 bg-black/70 backdrop-blur-md px-3.5 py-1 rounded-full border border-white/20 text-xs font-bold text-white shadow-lg">
                   {activeFruit.name} · {activeFruit.crunches}
                 </span>
               </div>
@@ -691,7 +704,7 @@ export default function VariantD() {
                 <img
                   src={`${base}${fruit.image}`}
                   alt={fruit.nameShort}
-                  className="w-5 h-5 rounded-full object-cover border border-white/20"
+                  className="w-5 h-5 rounded-full object-contain border border-white/20 bg-black/20"
                 />
                 <span>{fruit.nameShort}</span>
               </button>
@@ -705,7 +718,7 @@ export default function VariantD() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest text-[#06D6A0]">
-              Fem Rika Smaker
+              Sex Rika Smaker
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-1">
               Välj din favoritcrunch
@@ -723,12 +736,12 @@ export default function VariantD() {
               className="fruit-stage-card bg-white/[0.04] border border-white/10 hover:border-white/20 rounded-3xl p-5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group overflow-hidden"
             >
               <div>
-                {/* Real Freeze-Dried Fruit Photograph Header */}
-                <div className="w-full h-44 rounded-2xl overflow-hidden mb-4 relative border border-white/10 group-hover:border-white/25 transition-all bg-black/40">
+                {/* Real Freeze-Dried Fruit Package Header */}
+                <div className="w-full h-52 rounded-2xl overflow-hidden mb-4 relative border border-white/10 group-hover:border-white/25 transition-all bg-white/[0.02] flex items-center justify-center p-3">
                   <img
                     src={`${base}${fruit.image}`}
                     alt={fruit.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="h-full w-auto object-contain group-hover:scale-108 transition-transform duration-500 drop-shadow-[0_15px_25px_rgba(0,0,0,0.4)]"
                   />
                   <div className="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-md border border-white/20 text-white font-mono text-[10px] px-2.5 py-0.5 rounded-full">
                     {fruit.temp}
@@ -772,7 +785,7 @@ export default function VariantD() {
                       key={fruit.id}
                       src={`${base}${fruit.image}`}
                       alt={fruit.nameShort}
-                      className="inline-block h-9 w-9 rounded-full ring-2 ring-[#11161B] object-cover"
+                      className="inline-block h-9 w-9 rounded-full ring-2 ring-[#11161B] object-contain bg-black/30"
                     />
                   ))}
                 </div>
@@ -781,16 +794,16 @@ export default function VariantD() {
                 </span>
               </div>
               <h3 className="text-xl font-bold text-white mb-1">
-                Skolstartspaketet (5-pack)
+                Stora Provboxen (6-pack)
               </h3>
               <p className="text-xs text-white/70 leading-relaxed mb-6">
-                En påse för varje skoldag! Innehåller alla 5 frukter så att barnen kan prova och hitta sin personliga favorit.
+                Innehåller samtliga 6 frystorkade smaker: Jordgubbe, Banan, Äpple, Hallon, Björnbär och Mango! Barnens favoritmellanmål helt utan tillsatser.
               </p>
             </div>
             <div className="pt-4 border-t border-white/10 flex items-center justify-between">
               <div>
-                <span className="text-xs text-white/40 block line-through">145 kr</span>
-                <span className="text-lg font-extrabold text-white">125 kr</span>
+                <span className="text-xs text-white/40 block line-through">174 kr</span>
+                <span className="text-lg font-extrabold text-white">149 kr</span>
               </div>
               <button
                 onClick={() => {
@@ -798,7 +811,7 @@ export default function VariantD() {
                 }}
                 className="bg-[#E8344A] hover:bg-[#D02036] text-white font-bold text-xs px-5 py-2.5 rounded-full transition-all duration-200 active:scale-95 flex items-center gap-1.5 shadow-lg shadow-rose-900/40"
               >
-                <span>Köp Paketet</span>
+                <span>Köp Hela Boxen</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>

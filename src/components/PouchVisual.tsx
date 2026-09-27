@@ -106,7 +106,8 @@ export const PouchVisual: React.FC<PouchVisualProps> = ({
     banan: `${base}images/products/banan.png`,
     apple: `${base}images/products/apple.png`,
     hallon: `${base}images/products/hallon.png`,
-    bjornbar: `${base}images/products/bjornbar.jpg`,
+    bjornbar: `${base}images/products/bjornbar.png`,
+    mango: `${base}images/products/mango.png`,
   };
 
   const realImageSrc = realImages[fruitKey];
