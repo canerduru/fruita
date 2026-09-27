@@ -10,6 +10,7 @@ export function VariantNav() {
   const links = [
     { path: '/', label: '🌿 Varyant A (Nordic)', shortLabel: 'A: Nordic' },
     { path: '/bold', label: '⚡ Varyant B (Bold)', shortLabel: 'B: Bold' },
+    { path: '/pure', label: '🍏 Varyant C (Pure / Apple)', shortLabel: 'C: Pure' },
     { path: '/showcase', label: '📋 Karşılaştır', shortLabel: 'Showcase' },
   ];
 

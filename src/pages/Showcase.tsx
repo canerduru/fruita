@@ -21,8 +21,19 @@ const VARIANTS = [
     description: 'High-energy design — big typography, floating fruits, diagonal sections, vibrant colors.',
     palette: ['#E8344A', '#FFD700', '#6DBF4F', '#6A3CB5'],
     emoji: '🚀',
-    badge: 'New Style',
+    badge: 'Farsking Inspired',
     badgeColor: '#E8344A',
+  },
+  {
+    id: 'variant-c',
+    path: '/pure',
+    label: 'Variant C',
+    style: 'Nordic Pure (Apple HIG)',
+    description: 'Bright-but-soft "Sage Sauna" palette, 10:1 ratio slider, school backpack builder & Swish checkout.',
+    palette: ['#3D6647', '#FAF8F5', '#BA6A46', '#1F2A37'],
+    emoji: '🍏',
+    badge: 'Apple & Spells',
+    badgeColor: '#3D6647',
   },
 ];
 
@@ -55,15 +66,15 @@ export default function Showcase() {
           margin: '0 0 12px', letterSpacing: -1
         }}>Fruita — Design Variants</h1>
         <p style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 600, fontSize: 16, margin: 0 }}>
-          Compare both designs and choose the direction for your brand
+          Compare all three designs and choose the direction for your brand
         </p>
       </div>
 
       {/* Cards */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-        gap: 32, maxWidth: 780, width: '100%',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+        gap: 28, maxWidth: 1120, width: '100%',
       }}>
         {VARIANTS.map(v => (
           <div key={v.id} className="variant-card" style={{
