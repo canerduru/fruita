@@ -160,11 +160,71 @@ export default function VariantB() {
 
         .ticker-track { animation: tickerScroll 22s linear infinite; white-space: nowrap; }
 
-        /* ── Global resets for this variant ──────────────────────────────── */
+        /* ── Global resets & mobile overrides for Variant B ──────────────── */
         .vb-root * { box-sizing: border-box; }
         .vb-root { font-family: var(--font-body); }
         .vb-display { font-family: var(--font-display); letter-spacing: var(--ls-display); line-height: var(--lh-display); }
         .vb-label   { font-family: var(--font-body); letter-spacing: var(--ls-ui); text-transform: uppercase; font-weight: 700; }
+
+        @media (max-width: 768px) {
+          .vb-header-nav { display: none !important; }
+          .vb-hero-grid {
+            grid-template-columns: 1fr !important;
+            padding: 44px 16px 40px !important;
+            gap: 36px !important;
+            text-align: center !important;
+          }
+          .vb-hero-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .vb-hero-h1 {
+            font-size: clamp(48px, 14vw, 76px) !important;
+          }
+          .vb-hero-claims {
+            justify-content: center !important;
+          }
+          .vb-hero-cta {
+            flex-direction: column !important;
+            justify-content: center !important;
+            width: 100% !important;
+            gap: 12px !important;
+          }
+          .vb-hero-cta button {
+            width: 100% !important;
+            padding: 14px 24px !important;
+            font-size: 18px !important;
+          }
+          .vb-podium-outer {
+            width: min(290px, 78vw) !important;
+            height: min(290px, 78vw) !important;
+          }
+          .vb-podium-inner {
+            width: min(240px, 65vw) !important;
+            height: min(240px, 65vw) !important;
+          }
+          .vb-podium-badge {
+            right: 0px !important;
+            top: -10px !important;
+            width: 70px !important;
+            height: 70px !important;
+          }
+          .vb-contains-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
+          .vb-contains-circle {
+            width: min(280px, 76vw) !important;
+            height: min(280px, 76vw) !important;
+          }
+          .vb-floating-tag-left {
+            left: 0px !important;
+          }
+          .vb-floating-tag-right {
+            right: 0px !important;
+          }
+        }
       `}</style>
 
       {/* ─── HEADER ─── */}
@@ -185,7 +245,7 @@ export default function VariantB() {
 
           {/* Nav */}
           {/* Nav: DM Sans, uppercase label style — NOT display font */}
-          <nav style={{
+          <nav className="vb-header-nav" style={{
             display: 'flex', gap: 28,
             fontFamily: "var(--font-body)", fontWeight: 600,
             fontSize: 13, letterSpacing: '0.07em', textTransform: 'uppercase'
@@ -291,10 +351,10 @@ export default function VariantB() {
         <FloatingParticle emoji={emojis[0]} style={{ top: '45%', right: '22%', animationDelay: '2s', fontSize: 28, animation: 'floatBounce3 4.5s ease-in-out infinite' }} />
 
         {/* Content */}
-        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '80px 20px 60px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40, alignItems: 'center', position: 'relative', zIndex: 10 }}>
+        <div className="vb-hero-grid" style={{ maxWidth: 1100, margin: '0 auto', padding: '80px 20px 60px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40, alignItems: 'center', position: 'relative', zIndex: 10 }}>
 
           {/* Left: Text */}
-          <div className="hero-text" key={heroProduct.id + '-text'}>
+          <div className="hero-text vb-hero-text" key={heroProduct.id + '-text'}>
             <div style={{
               display: 'inline-block', background: '#fff', color: colors.bg,
               fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 11,
@@ -306,7 +366,7 @@ export default function VariantB() {
             </div>
 
             {/* Hero H1: Bebas Neue — max impact, zero weight noise */}
-            <h1 style={{
+            <h1 className="vb-hero-h1" style={{
               fontFamily: "var(--font-display)",
               fontSize: 'clamp(64px, 9vw, 108px)',
               color: '#fff', lineHeight: 0.92,
@@ -341,7 +401,7 @@ export default function VariantB() {
 
             {/* Claims */}
             {/* Claim pills: DM Sans 600 uppercase label */}
-            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 36 }}>
+            <div className="vb-hero-claims" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 36 }}>
               {['No added sugar', '1 ingredient', 'KRAV certified', '100% pure fruit'].map(c => (
                 <span key={c} style={{
                   fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 11,
@@ -354,7 +414,7 @@ export default function VariantB() {
               ))}
             </div>
 
-            <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+            <div className="vb-hero-cta" style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' }}>
               <button
                 className="add-btn"
                 onClick={() => addToCart(heroProduct)}
@@ -376,13 +436,13 @@ export default function VariantB() {
           {/* Right: Product visual */}
           <div className="hero-product-img" key={heroProduct.id + '-img'} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative' }}>
             {/* Circle podium */}
-            <div style={{
+            <div className="vb-podium-outer" style={{
               width: 340, height: 340, borderRadius: '50%',
               background: 'rgba(255,255,255,0.15)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               position: 'relative', border: '3px solid rgba(255,255,255,0.25)'
             }}>
-              <div style={{
+              <div className="vb-podium-inner" style={{
                 width: 280, height: 280, borderRadius: '50%',
                 background: 'rgba(255,255,255,0.2)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -406,7 +466,7 @@ export default function VariantB() {
             </div>
 
             {/* Badge */}
-            <div style={{
+            <div className="vb-podium-badge" style={{
               position: 'absolute', top: -10, right: 30,
               background: '#FFD700', color: '#111',
               borderRadius: '50%', width: 80, height: 80,
@@ -561,7 +621,7 @@ export default function VariantB() {
 
       {/* ─── INGREDIENTS SECTION (Farsking "Innehåller" style) ─── */}
       <section style={{ background: '#FFF5E8', padding: '80px 20px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }}>
+        <div className="vb-contains-grid" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }}>
           {/* Left: Checklist */}
           <div>
             <div style={{ marginBottom: 28 }}>
@@ -602,7 +662,7 @@ export default function VariantB() {
 
           {/* Right: Big visual */}
           <div style={{ position: 'relative', textAlign: 'center' }}>
-            <div style={{
+            <div className="vb-contains-circle" style={{
               width: 320, height: 320, borderRadius: '50%',
               background: '#E8344A', border: '4px solid #111',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -625,13 +685,13 @@ export default function VariantB() {
               </div>
             </div>
             {/* Floating labels */}
-            <div style={{
+            <div className="vb-floating-tag-right" style={{
               position: 'absolute', top: 20, right: -20, background: '#FFD700',
               border: '3px solid #111', borderRadius: 12, padding: '8px 14px',
               fontFamily: "var(--font-display)", fontSize: 16, letterSpacing: '0.04em',
               boxShadow: '3px 3px 0 #111', transform: 'rotate(8deg)'
             }}>NO ADDITIVES</div>
-            <div style={{
+            <div className="vb-floating-tag-left" style={{
               position: 'absolute', bottom: 30, left: -20, background: '#6DBF4F',
               color: '#fff', border: '3px solid #111', borderRadius: 12, padding: '8px 14px',
               fontFamily: "var(--font-display)", fontSize: 16, letterSpacing: '0.04em',

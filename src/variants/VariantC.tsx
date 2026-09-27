@@ -641,7 +641,7 @@ export default function VariantC() {
               <div className="text-xs font-semibold text-[#6B7280]">
                 Klicka på smakerna för att fylla skolväskan:
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
                 {PURE_FRUITS.map((fruit) => {
                   const isAdded = backpackItems.includes(fruit.id);
                   return (

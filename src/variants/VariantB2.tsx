@@ -218,7 +218,7 @@ export default function VariantB2() {
       `}</style>
 
       {/* ─── Top Bar Banner ─── */}
-      <div className="bg-[#111] text-white py-2 px-4 text-center text-xs font-semibold tracking-wider flex items-center justify-center gap-3">
+      <div className="bg-[#111] text-white py-2 px-3 text-center text-[11px] sm:text-xs font-semibold tracking-wider flex flex-wrap items-center justify-center gap-2">
         <span className="bg-[#E8344A] text-[10px] font-black uppercase px-2 py-0.5 rounded-full">
           Nyhet
         </span>
@@ -291,13 +291,13 @@ export default function VariantB2() {
             </div>
 
             {/* Giant Display Title */}
-            <h1 className="vb2-font-display text-7xl sm:text-8xl md:text-9xl leading-[0.88] text-white drop-shadow-[4px_4px_0_rgba(0,0,0,0.25)]">
+            <h1 className="vb2-font-display text-5xl sm:text-7xl md:text-9xl leading-[0.88] text-white drop-shadow-[4px_4px_0_rgba(0,0,0,0.25)] break-words">
               {activeProduct.name.toUpperCase()}!
             </h1>
 
             {/* Subtitle with real packaging text */}
             <div className="inline-block bg-black/20 backdrop-blur-md px-4 py-1.5 rounded-xl border border-white/20">
-              <span className="vb2-font-display text-2xl tracking-wider text-white">
+              <span className="vb2-font-display text-xl sm:text-2xl tracking-wider text-white">
                 {activeProduct.subtitle.toUpperCase()} · 15G SUPERCRUNCH
               </span>
             </div>
@@ -322,7 +322,7 @@ export default function VariantB2() {
             <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-5">
               <button
                 onClick={(e) => addToCart(activeProduct, e)}
-                className="vb2-font-display text-2xl tracking-wider bg-white text-[#111] hover:bg-black hover:text-white border-[3px] border-[#111] px-8 py-4 rounded-2xl shadow-[5px_5px_0_#111] transition-all duration-200 active:scale-95 flex items-center gap-3 cursor-pointer"
+                className="vb2-font-display text-xl sm:text-2xl tracking-wider bg-white text-[#111] hover:bg-black hover:text-white border-[3px] border-[#111] px-7 sm:px-8 py-3.5 sm:py-4 rounded-2xl shadow-[5px_5px_0_#111] transition-all duration-200 active:scale-95 flex items-center gap-3 cursor-pointer w-full sm:w-auto justify-center"
               >
                 <span>KÖP {activeProduct.name.toUpperCase()} · 29 KR</span>
                 <ArrowRight className="w-5 h-5" />
@@ -336,34 +336,34 @@ export default function VariantB2() {
           </div>
 
           {/* Right Column: Real Transparent Pouch on 3D Podium */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
+          <div className="lg:col-span-5 flex flex-col items-center justify-center relative my-4 lg:my-0">
             {/* Podium Circle */}
-            <div className="relative w-72 h-72 sm:w-88 sm:h-88 rounded-full bg-white/15 border-4 border-white/25 flex items-center justify-center shadow-2xl backdrop-blur-sm">
-              <div className="w-60 h-60 sm:w-72 sm:h-72 rounded-full bg-white/20 border-2 border-white/30 flex items-center justify-center">
+            <div className="relative w-64 h-64 sm:w-88 sm:h-88 max-w-[80vw] max-h-[80vw] rounded-full bg-white/15 border-4 border-white/25 flex items-center justify-center shadow-2xl backdrop-blur-sm">
+              <div className="w-52 h-52 sm:w-72 sm:h-72 rounded-full bg-white/20 border-2 border-white/30 flex items-center justify-center">
                 {/* Floating Real Pouch Image */}
-                <div className="pouch-levitate relative z-20 w-64 sm:w-76 flex justify-center">
+                <div className="pouch-levitate relative z-20 w-52 sm:w-76 flex justify-center">
                   <img
                     src={`${base}${activeProduct.image}`}
                     alt={activeProduct.fullName}
-                    className="max-h-[380px] sm:max-h-[440px] w-auto object-contain select-none drop-shadow-[0_30px_35px_rgba(0,0,0,0.55)] transition-transform duration-500 hover:scale-105"
+                    className="max-h-[260px] sm:max-h-[440px] w-auto object-contain select-none drop-shadow-[0_30px_35px_rgba(0,0,0,0.55)] transition-transform duration-500 hover:scale-105"
                   />
                 </div>
               </div>
 
               {/* Floating Badge Sticker */}
-              <div className="absolute -top-4 -right-4 bg-[#FFD700] text-[#111] border-[3px] border-[#111] rounded-full w-24 h-24 flex flex-col items-center justify-center shadow-[4px_4px_0_#111] rotate-12 z-30 select-none">
-                <span className="text-xl">⭐</span>
-                <span className="text-[10px] font-black uppercase tracking-wider text-center leading-tight">
+              <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-[#FFD700] text-[#111] border-[3px] border-[#111] rounded-full w-20 h-20 sm:w-24 sm:h-24 flex flex-col items-center justify-center shadow-[4px_4px_0_#111] rotate-12 z-30 select-none">
+                <span className="text-lg sm:text-xl">⭐</span>
+                <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-center leading-tight">
                   {activeProduct.badge}
                 </span>
               </div>
 
               {/* Nutrition pill sticker */}
-              <div className="absolute -bottom-3 -left-3 bg-white text-[#111] border-[3px] border-[#111] rounded-2xl px-4 py-2 shadow-[4px_4px_0_#111] -rotate-6 z-30 select-none">
-                <span className="vb2-font-display text-lg tracking-wider block leading-none">
+              <div className="absolute -bottom-2 -left-2 sm:-bottom-3 sm:-left-3 bg-white text-[#111] border-[3px] border-[#111] rounded-2xl px-3 py-1.5 sm:px-4 sm:py-2 shadow-[4px_4px_0_#111] -rotate-6 z-30 select-none">
+                <span className="vb2-font-display text-sm sm:text-lg tracking-wider block leading-none">
                   ENDAST 15G · 48 KCAL
                 </span>
-                <span className="text-[10px] text-[#666] font-bold">100% Äkta råvara</span>
+                <span className="text-[9px] sm:text-[10px] text-[#666] font-bold">100% Äkta råvara</span>
               </div>
             </div>
           </div>
@@ -418,10 +418,10 @@ export default function VariantB2() {
               VAD FINNS I PÅSEN?
             </span>
 
-            <h2 className="vb2-font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] text-white tracking-wide">
-              INNEHÅLLER EXAKT <span className="text-[#FFD700] underline decoration-[#E8344A] decoration-wavy decoration-4">1 SAK.</span>
+            <h2 className="vb2-font-display text-4xl sm:text-6xl md:text-8xl lg:text-9xl leading-[0.92] text-white tracking-wide break-words">
+              INNEHÅLLER EXAKT <span className="text-[#FFD700] underline decoration-[#E8344A] decoration-wavy decoration-2 sm:decoration-4">1 SAK.</span>
               <br />
-              OCH DET ÄR <span className="bg-[#E8344A] text-white px-4 sm:px-6 py-1 rounded-2xl inline-block mt-3 shadow-[6px_6px_0_white] rotate-1">BARA ÄKTA FRUKT!</span>
+              OCH DET ÄR <span className="bg-[#E8344A] text-white px-3 sm:px-6 py-1 rounded-2xl inline-block mt-3 shadow-[4px_4px_0_white] sm:shadow-[6px_6px_0_white] rotate-1 max-w-full text-center">BARA ÄKTA FRUKT!</span>
             </h2>
           </div>
 
